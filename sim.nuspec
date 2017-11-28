@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>sim</id>
+    <version>1.5.0.2</version>
+    <title>sim</title>
+    <authors>Sitecore</authors>
+    <owners>Alan</owners>
+    <projectUrl>http://dl.sitecore.net/updater/sim/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/alan-null/choco-sim/master/icon.png</iconUrl>
+    <tags>sim sitecore instance manager</tags>
+    <summary>Sitecore Instance Manager</summary>
+<description>
+### Sitecore Instance Manager
+
+SIM is a key tool for managing the park of Sitecore instances. You can install, locate, maintain, reinstall or delete Sitecore products. It has API and plugin engine so you can extend it for any your need.
+
+### Global Features
+
+* List Sitecore websites installed locally
+* Install new Sitecore standalone product
+* Install Sitecore modules and packages
+* Download Sitecore CMS and DMS from SDN
+* Back up Sitecore websites, and Restore them
+* Export Sitecore website and Import it on remote computer
+* Delete Sitecore websites
+* Reinstall Sitecore website
+
+### Open in Browser
+
+* Open website
+* Open Sitecore Client
+* Open Sitecore Client (bypassing security)
+* Open [Support Toolbox](https://bitbucket.org/sitecoresupport/sitecore-support-toolbox)
+
+### Open applications
+
+* Open Website folder
+* Open Visual Studio 2012 project (create project if missing)
+* Open web.config file
+* Open `showconfig.xml` configuration
+* Open current log file
+* Open entire log files in [Sitecore Log Analyzer](http://marketplace.sitecore.net/Modules/Sitecore_Log_Analyzer.aspx)
+
+### Change website
+
+Start/Stop App Pool
+Recycle App Pool
+Kill `w3wp.exe` process
+Change Framework version
+Change Framework bitness
+
+
+### Extra features
+
+* Edit `etc\hosts` file
+* Batch operations with SQL databases
+* Predefined configurations (Enable MVC, Scaling ...)
+
+### Supported Products
+
+* Sitecore CMS 6, 7 and 7.5 / 8
+* Sitecore Intranet 3.x
+* Sitecore Foundry 3.x and 4.x (in a form of Sitecore package)
+* Demo Solutions (Nicam, Jetstream)
+* All Sitecore modules
+
+### Some of Sitecore modules have special support for initial configuration:
+
+* Active Directory
+* Web Forms for Marketers
+* E-mail Campaign Manager
+    </description>
+    <dependencies>
+      <dependency id="autohotkey.portable" />
+      <dependency id="chocolatey-core.extension" version="1.0" />
+    </dependencies>
+
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
