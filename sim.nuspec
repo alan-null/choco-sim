@@ -3,8 +3,8 @@
   xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sim</id>
-    <version>1.5.0.2</version>
-    <title>sim</title>
+    <version>1.5.0.201</version>
+    <title>Sitecore Instance Manager</title>
     <authors>Sitecore</authors>
     <owners>Alan</owners>
     <projectUrl>http://dl.sitecore.net/updater/sim/</projectUrl>
@@ -12,6 +12,7 @@
     <iconUrl>https://raw.githubusercontent.com/alan-null/choco-sim/master/icon.png</iconUrl>
     <packageSourceUrl>https://github.com/alan-null/choco-sim</packageSourceUrl>
     <tags>sim sitecore instance manager</tags>
+    <bugTrackerUrl>https://github.com/alan-null/choco-sim/issues</bugTrackerUrl>
     <summary>Sitecore Instance Manager</summary>
     <description>
 ### Sitecore Instance Manager

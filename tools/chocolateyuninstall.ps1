@@ -1,4 +1,8 @@
-﻿$appPathKey = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\2db4ca814b8890e3"
+﻿$obj = Get-ChildItem "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\" |
+    ? { $_.GetValueNames().IndexOf("HelpLink") -gt -1} |
+    ? { $_.GetValue("HelpLink").Contains('https://github.com/sitecore/sitecore-instance-manager') } | Select-Object -First 1
+
+$appPathKey = $obj.Name.Replace("HKEY_CURRENT_USER\", "HKCU:\")
 if (Test-Path $appPathKey) {
     $entry = gi $appPathKey
     $entry.GetValue("DisplayVersion")
@@ -8,19 +12,13 @@ if (Test-Path $appPathKey) {
     $ahkExe = 'AutoHotKey'
     $ahkProcess = "$ahkExe '$scriptPath\sim-uninstall.ahk'"
 
-    try {
-        $uninst = $entry.GetValue("UninstallString")
-        $index = $uninst.IndexOf(" ")
-        $exe = $uninst.Substring(0, $index)
-        $argz = $uninst.Substring($index, $uninst.Length - $index)
-        Start-Process $exe $argz
-        Start-ChocolateyProcessAsAdmin $ahkProcess
-        Write-ChocolateySuccess $packageName
-    }
-    catch {
-        Write-ChocolateyFailure $packageName "Erorro while unisntalling."
-    }
+    $uninst = $entry.GetValue("UninstallString")
+    $index = $uninst.IndexOf(" ")
+    $exe = $uninst.Substring(0, $index)
+    $argz = $uninst.Substring($index, $uninst.Length - $index)
+    Start-Process $exe $argz
+    Start-ChocolateyProcessAsAdmin $ahkProcess
 }
 else {
-    Write-ChocolateyFailure $packageName "Nothing to uninstall."
+    Write-Host $packageName "Nothing to uninstall."
 }
