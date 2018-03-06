@@ -3,7 +3,7 @@
   xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>sim</id>
-    <version>1.5.0.201</version>
+    <version>1.5.0.202</version>
     <title>Sitecore Instance Manager</title>
     <authors>Sitecore</authors>
     <owners>Alan</owners>
